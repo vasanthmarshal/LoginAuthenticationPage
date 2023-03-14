@@ -1,0 +1,11 @@
+{% autoescape off %}
+welcome to smt transport
+
+Hello{{name}}
+
+please confirm the mail by clicking oon foloweing button
+
+Confirmation Link:http://{{domain}}{%url 'activate' uidb64=uid token=token%}
+
+
+{% endautoescape &}

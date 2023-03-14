@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Signup</title>
+</head>
+<body>
+  {%for message in messages%}
+    <div class="alert alert-{{message.tags}} alert.dismissible fade show">
+        <strong>Message</strong>{{message}}
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    <span aria-hidden="true">&times;</span>
+  {% endfor %}
+
+  <h3>Sign up</h3>
+  
+  <form method="post" action="/signup">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_username">Username:</label>
+      <input type="text" name="username" id="username" placeholder="create a username" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="id_first_name">First name:</label>
+      <input type="text" name="fname" id="fname" placeholder="First Name" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="id_last_name">Last name:</label>
+      <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="id_email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="email"required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="id_password">Password:</label>
+      <input type="password" name="pass1" id="pass1" placeholder="Enter password"required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="id_confirm_password">Confirm password:</label>
+      <input type="password" name="pass2" id="pass2" placeholder="confirm password"required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Sign up</button>
+  </form>
+
+
+
+
+</body>
+</html>
